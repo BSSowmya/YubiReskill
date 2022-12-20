@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="quizz.css">
+    <style>
+        body{
+            background-image: url("https://www.shutterstock.com/image-vector/quiz-neon-sign-vector-ready-260nw-1723459042.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #quiz{
+            text-align: center;
+            background-color: lightgrey;
+            width: 300px;
+            border: 15px;
+            padding: 50px;
+            margin: auto;
+        }
+        #quiz .btn{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: #555;
+            color: white;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+            border-radius: 12px;
+            background-color: black; 
+            border: 2px solid #555555;
+        }
+    </style>
+    <title>QuiZZ</title>
+</head>
+<body>
+    <div id="main">
+    <div id="quiz">
+        <img  style="height:auto ; width: 100%;"src="data:image/png;base64,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">
+        <button  class="btn" onclick ="myclick()" >Start</button>
+    </div>
+    </div>
+    <script>
+         var flag =true;
+         
+         var i=0;
+         var quest=[
+            {
+            question: 'The world will little note, nor long remember, what we say here, but it can never forget what they did here.',
+            options: ['Benjamin Franklin','Thomas Edison','Abraham Lincoln','Vince Lombardi']
+            },
+            {
+            question: 'The arc of the moral universe is long, but it bends toward justice.',
+            options: ['Confucius','Oliver Wendell Holmes','Martin Luther King, Jr.','Socrates']
+            }, 
+            {
+            question: 'What does not kill me makes me stronger.',
+            options: ['Joey Chestnut','Friedrich Nietzsche','Theodore Roosevelt','Jonas Salk']
+            },
+            {question: 'When people show you who they are, believe them.',
+            options: ['Benedict Arnold','Sigmund Freud','Andy Warhol','Oprah Winfrey']
+            },
+            {
+             question: 'Float like a butterfly, sting like a bee.',
+            options: ['Muhammad Ali','Sun Tzu','Jack the Ripper','Douglas MacArthur']
+        
+            }   
+        ]   
+         const len = quest.length;
+        function myclick(){
+           
+         
+            const element = document.getElementById("quiz");
+            element.remove();      
+           // defineDiv();
+            let q1 = document.getElementById("main");
+            
+            n = document.getElementById("btn1");
+            if (i<len){
+            // alert("for loop" + i);
+             console.log(flag);
+             addnremove();
+             //n.addEventListener("click",addQuestions(quest[i]));
+            
+        }
+    }
+        function addnremove(){ 
+              //  alert("addnremove");
+                if(document.getElementById("ques")){
+               // alert("remove")
+                const element = document.getElementById("ques");
+                element.remove(); 
+                i++;
+                addQuestions(quest[i]);   
+                }else{
+              //  alert("new")
+                addQuestions(quest[i]);
+                }
+                       
+
+        }
+        function addQuestions(quest){   
+            // if(document.getElementById("ques")){
+            //     remove();
+            // }
+            if(i<len){
+                addQuiz();
+            let  d = document.getElementById("ques");         
+                      
+            let q1 = document.getElementById("main");
+            var para = document.createElement("h2");
+            para.id="node";
+            var no=i+1;
+             var node = document.createTextNode("Q" +no+":"+ quest.question);
+             para.appendChild(node);
+             d.appendChild(para);
+           // alert("here");        
+            var a =quest.options.length;     
+             for (var j=0;j< a;j++){
+              //  alert("here"); 
+             
+             var in1 = document.createElement("input");
+             var val1= document.createTextNode("1");
+             in1.setAttribute("type", "checkbox");
+             in1.setAttribute("name", quest.options[j]);
+             in1.appendChild(val1);
+             d.appendChild(in1);          
+             var  l1= document.createElement("label");
+             var txt1= document.createTextNode(quest.options[j]);
+             l1.setAttribute("for", quest.options[j]);
+             var b1= document.createElement("br");
+             var txt2= document.createTextNode("");
+             b1.appendChild(txt2);
+             l1.appendChild(txt1);
+             d.appendChild(l1);
+             d.appendChild(b1);   
+             
+             }          
+            var btn = document.createElement("button");
+            var text= document.createTextNode("Next");
+            btn.appendChild(text);
+            d.appendChild(btn);
+            btn.setAttribute("value", "Next");
+            btn.setAttribute("id", "next");
+            btn.setAttribute("onclick", "addnremove()");         
+            q1.appendChild(d);
+            document.body.appendChild(q1); 
+
+            } else{                 
+            let q1 = document.getElementById("main");   
+            var head = document.createElement("h1");
+            var text= document.createTextNode("Thank You. End of Quiz");
+            head.appendChild(text);
+            q1.appendChild(head);
+            btn.setAttribute("id", "head");
+            document.body.appendChild(q1); 
+
+            }
+            
+}     
+function defineDiv(){
+    let q1 = document.getElementById("main");
+    q1.style.backgroundColor ="lightgrey";
+    q1.style.width="300px";
+    q1.style.border="15px black";
+    q1.style.padding="50px";
+    q1.style.margin="auto";  
+   
+}
+            
+function addQuiz(){
+    //alert("in quiz");
+    let q1 = document.getElementById("main");
+            var d = document.createElement("div");
+            var n = document.createTextNode("");
+            d.setAttribute("id","ques")
+            d.appendChild(n);
+            q1.appendChild(d);
+            d.style.display = 'block'    
+            document.body.appendChild(q1); 
+
+}
+function no() {
+
+}
+
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="books.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+
+        <div id="btn"><button class="btn1" onclick="showbooks()" >Show Books</button></div>
+    </div>
+   
+    <script>
+        const books =[
+
+            {
+            bookname:'The Very Hungry Caterpillar',
+            image:'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1603739265i/4948.jpg',
+            date :'June 3, 1969',
+            author :'Eric Carle'
+
+
+        },
+        {
+            bookname:'Where the Wild Things Are',
+            image:'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1384434560i/19543.jpg',
+            date :' April 9, 1963',
+            author :'Maurice Sendak'
+
+
+        },
+        {
+            bookname:'Green Eggs and Ham',
+            image:'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1468680100i/23772.jpg',
+            date :'June 1, 1960',
+            author :'Dr. Seuss'
+
+
+        },
+        {
+            bookname:'Goodnight Moon',
+            image:'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1439223893i/32929.jpg',
+            date :'September 3, 1947',
+            author :'Margaret Wise BrownClement Hurd'
+
+
+        }
+    
+    ]
+            showbooks =() =>{
+            const element = document.getElementById("btn");
+             element.remove();
+
+            var m = document.getElementById("main");
+               var tab= document.createElement("table");
+               var  text= document.createTextNode("");
+               tab.appendChild(text);
+               m.appendChild(tab);
+               tab.setAttribute("class","tab");
+
+               var r= document.createElement("tr");
+               var  h= document.createTextNode("");
+               r.appendChild(h);
+               m.appendChild(r);
+
+               var thead1= document.createElement("th");
+               var  text1= document.createTextNode("Book Name");
+               thead1.appendChild(text1);
+               r.appendChild(thead1);
+
+               var thead2= document.createElement("th");
+               var  text2= document.createTextNode("Image");
+               thead2.appendChild(text2);
+               r.appendChild(thead2);
+
+               var thead3= document.createElement("th");
+               var  text3= document.createTextNode("Date");
+               thead3.appendChild(text3);
+               r.appendChild(thead3);
+
+               var thead4= document.createElement("th");
+               var  text4= document.createTextNode("Author");
+               thead4.appendChild(text4);
+               r.appendChild(thead4);
+               tab.appendChild(r);
+
+
+             for(var i=0;i<books.length;i++){
+                
+             var row= document.createElement("tr");
+               var  t= document.createTextNode("");
+               row.appendChild(t);
+               
+
+               var col1= document.createElement("td");
+               var  data= document.createTextNode(books[i].bookname);
+               col1.appendChild(data);
+               row.appendChild(col1);
+
+               var col2= document.createElement("td");
+               var img= document.createElement("img");
+               var  data= document.createTextNode("");
+               img.setAttribute("src",books[i].image);
+               col2.appendChild(img);
+               col2.appendChild(data);
+               row.appendChild(col2);
+
+               var col3= document.createElement("td");
+               var  data= document.createTextNode(books[i].date);
+               col3.appendChild(data);
+               row.appendChild(col3);
+
+               var col4= document.createElement("td");
+               var  data= document.createTextNode(books[i].author);
+               col4.appendChild(data);
+               row.appendChild(col4);
+               tab.appendChild(row);
+
+
+
+                
+
+
+            }
+
+
+        }
+
+
+
+    </script>
+</body>
+</html>
